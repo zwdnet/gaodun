@@ -48,7 +48,7 @@ def run(gpus, user, server):
     elif gpus == "test":
         before_run(user, server)
         # 运行指定代码
-        s = "ssh root@" + server +  " -p 2222 \"/opt/conda/bin/pytest -v /home/code" + "\""
+        s = "ssh root@" + server +  " -p 2222 \"/opt/conda/bin/pytest -v /home/code" + sys.argv[2] + "\""
         print("测试4", s)
         print("正在运行代码……\n")
         os.system(s)
